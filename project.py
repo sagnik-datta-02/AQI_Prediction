@@ -4,7 +4,11 @@ import numpy as np
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
+import gzip
 
+# Load the compressed pickle file with only the model
+with gzip.open('random_compressed2334.pkl.gz', 'rb') as f:
+    model = pickle.load(f)
 def predict_aqi_rf(model, scaler, input_values):
     """
     Predicts AQI based on input feature values using a trained Random Forest model.
@@ -109,11 +113,10 @@ def main():
         Xylene = st.sidebar.number_input("Xylene", key=11, placeholder="Type a number...")
 
     data = [area, PM25, PM10, NO, NO2, NOx, NH3, CO, SO2, O3, Benzene, Toluene, Xylene]
-
+    model=''
     # Load the model and scaler
-    model_in = open('random_forestmodel.pkl', 'rb')
-    model = pickle.load(model_in)
-    model_in.close()
+    with gzip.open('random_compressed2334.pkl.gz', 'rb') as f:
+        model = pickle.load(f)
 
     scaler_in = open('standardscaler.pkl', 'rb')
     scaler = pickle.load(scaler_in)
