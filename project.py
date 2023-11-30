@@ -132,10 +132,8 @@ def main():
     # Project Information
     st.text("Project Information:")
     st.text("Contributors:")
-    st.text("1. Sagnik Datta - 44")
-    st.text("2. Swapnendu Banerjee - 50")
-    st.text("3. Moyukh Chowdhury - 46")
-    st.text("4. Urjita Ray - 36")
+    st.text("1. Sagnik Datta - 44, Swapnendu Banerjee - 50, 3. Moyukh Chowdhury - 46")
+    st.text("4. Urjita Ray - 35")
     st.text("Department: Computer Science & Engineering, RCCIIT")
     st.text("Lab: IT/Python Workshop PCC CS393")
     st.text("SEM 3 CSE A Grp-2")
